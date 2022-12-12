@@ -1,0 +1,190 @@
+<html>
+<img src="img.png" width=400px height=100px>
+
+<head>
+    <script>
+        function ver() {
+            var name =
+                document.forms.RegForm.Name.value;
+            var email =
+                document.forms.RegForm.EMail.value;
+            var phone =
+                document.forms.RegForm.Telephone.value;
+            var what =
+                document.forms.RegForm.Subject.value;
+            var password =
+                document.forms.RegForm.Password.value;
+            var address =
+                document.forms.RegForm.Last.value;
+            var regEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g; //Javascript reGex for Email Validation.
+            var regPhone = /^\d{10}$/; // Javascript reGex for Phone Number validation.
+            var regName = /\d+$/g; // Javascript reGex for Name validation
+
+            if (name == "" || regName.test(name)) {
+                window.alert("Please enter your first name .");
+                name.focus();
+                return false;
+            }
+
+            if (address == "") {
+                window.alert("Please enter your last name .");
+                address.focus();
+                return false;
+            }
+
+            if (email == "" || !regEmail.test(email)) {
+                window.alert("Please enter a valid e-mail address.");
+                email.focus();
+                return false;
+            }
+
+            if (password == "") {
+                alert("Please enter your password");
+                password.focus();
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert("Password should atleast be 6 character long");
+                password.focus();
+                return false;
+
+            }
+            if (phone == "" || !regPhone.test(phone) || phone.length < 10) {
+                alert("Please enter valid phone number.");
+                phone.focus();
+                return false;
+            }
+
+            if (what.selectedIndex == -1) {
+                alert("Please enter your course.");
+                what.focus();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+<br>
+<br>
+<br>
+
+    <title>Registration Form</title>
+    <style>
+        .container {
+
+            min-width: 450px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 20%;
+            left: 50%;
+            margin: 20px;
+            padding: 60px 70px;
+        }
+
+        .block {
+            background-color: #ffffffd6;
+            padding: 15px;
+            margin-top: 18%;
+            border-radius: 20px;
+            box-shadow: 0 100px 100px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            background-image: url("bg.png");
+            height: 800px;
+            top: 0%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div style="font-size: 15px;color:black";"font-family:verdana">
+        <p>K.SHRIVARSHINI<br>CH.EN.U4CYS21077</p>
+        <a href="../index.html" style="text-decoration:none;color:black;"font-family:times roman";></a>
+    </div>
+    <div class="container block">
+        <h1 align="center">Amrita<font style="color:#AA274F"> CyberNation </font>(ACN) 2022</h1>
+        <form name="RegForm" onsubmit="return ver()" method="post">
+            <table style="border-collapse:separate;
+                border-spacing:0 15px;column-gap: 40px;font-weight: bold;">
+                <tr>
+                    <td>First Name: </td>
+                    <td><input type="text" name="Name" /></td>
+                </tr>
+
+                <tr>
+                    <td>Last Name:</td>
+                    <td><input type="text" name="Last" /></td>
+                </tr>
+                <tr>
+                    <label>
+                        <td>
+                            Gender :</td>
+                        <td>
+                            <input type="radio" value="Male" name="gender" checked> Male
+                            <input type="radio" value="Female" name="gender"> Female
+                            <input type="radio" value="Other" name="gender"> Other
+                        </td>
+                </tr>
+                <tr>
+                    <td>DOB</td>
+                    <td><input type="date"></td>
+                </tr>
+                <tr>
+                    <td>E-mail Address:</td>
+                    <td> <input type="text" name="EMail" /></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td> <input type="text" name="Password" /></td>
+                </tr>
+                <tr>
+                    <td>Phone No: </td>
+                    <td><input type="text" name="Telephone" /></td>
+                </tr>
+                <tr>
+                    <td>Events</td>
+                    <td><input type="checkbox" id="e1">
+                        <label for="e1"> Cyber Conclave '22 - OCT 1</label>
+                        <input type="checkbox" id="e2">
+                        <label for="e2"> Cyber Industry Meet - OCT 8</label><br>
+                        <input type="checkbox" id="e3">
+                        <label for="e3">Amrita Tech Fest - OCT 29 & 30</label>
+                        <input type="checkbox" id="e4">
+                        <label for="e4">Cyber Abyaan - NOV 8</label></td>
+                </tr>
+                <tr>
+                    <td>
+                        Profession</td>
+                    <td>
+                        <select type="text" value="" name="Subject">
+                            <option value="Event" selected disables hidden>Profession</option>
+                            <option value="Students">Students - 200 Rs</option>
+                            <option value="Research">Research Scholars/Faculty Members - 500 Rs</option>
+                            <option value="Industry">Industry/Others - 1000 Rs</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Team Details:
+                    <td><textarea cols="40" row="3" name="Comment" required> </textarea></td>
+                </tr>
+                <tr>
+                    <td>ID Proof [ID Card/Aadhar Card]</td>
+                    <td>&nbsp;&nbsp;<input type="file" name="idproof" required></td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" value="Submit" name="Submit" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>
