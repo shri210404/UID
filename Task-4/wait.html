@@ -1,0 +1,79 @@
+<!doctype html>
+<head>
+<title>
+ form
+</title>
+</head>
+<body>
+<body bgcolor="LightGray">
+  <h1 align="center">Registration Form </h1>
+ <center> <form name="registration" class="registartion-form" onsubmit="return formValidation()">
+    <table>
+      <tr>
+        <td><label for="name">Name:</label></td>
+        <td><input type="text" name="name" id="name" placeholder="your name"></td>
+      </tr>
+      <tr>
+        <td><label for="email">Email:</label></td>
+        <td><input type="text" name="email" id="email" placeholder="your email"></td>
+      </tr>
+      <tr>
+        <td><label for="password">Password:</label></td>
+        <td><input type="password" name="password" id="password"></td>
+      </tr>
+      <tr>
+        <td><label for="phoneNumber">Phone Number:</label></td>
+        <td><input type="number" name="phoneNumber" id="phoneNumber"></td>
+      </tr>
+      <tr>
+        <td><label for="gender">Gender:</label></td>
+        <td>Male: <input type="radio" name="gender" value="male">
+          Female: <input type="radio" name="gender" value="female">
+      </tr>
+      <tr>
+        <td><label for="Btech">Specialization</label></td>
+        <td>
+          <select name="Btech" id="Btech">
+            <option value="">Select specialization</option>
+            <option value="Cyber Securtiy">Cyber Security</option>
+            <option value="Artificial Intelligence">Artificial Intelligence</option>
+            <option value="Robotics and automation">Robotics and Automation</option>
+            <option value="Computer Science">Computer SCience</option>
+            <option value="Data science">Data science</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="interest">Area of interest</label></td>
+        <td>
+          <select name="interest" id="interest">
+            <option value="">Select Area of Interest</option>
+            <option value="Project">Project</option>
+            <option value="Paper Presentation">Paper Presentation</option>
+            <option value="Hackathon">Hackathon</option>
+            <option value="CTF">CTF</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="pincode">Pin Code:</label></td>
+        <td><input type="number" name="pincode" id="pincode"></td>
+      </tr>
+      <tr>
+        <td><label for="college name">College name:</label></td>
+        <td><input type="text" name="college name" id="college name"></td>
+      </tr>
+      <tr>
+        <td><label for="about">About:</label></td>
+        <td><textarea name="about" id="about" placeholder="Project name and abstract..."></textarea></td>
+      </tr>
+     
+
+
+<form method="POST" action="tq.html">
+<input type="submit">
+    </form>
+</center>
+  
+</body>
+</html>
