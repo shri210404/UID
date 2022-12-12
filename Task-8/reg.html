@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Mouse Events and Regular Functions</title>
+    <style>
+        .container {
+
+min-width: 320px;
+position: absolute;
+transform: translate(-50%, -50%);
+left: 50%;
+top: 60%;
+
+}
+    </style>
+</head>
+<body>
+    <center><img src="logo.png"></center>
+    <div clsss="container">
+    <h2>JS Mouse Events</h2>
+    <img id='img' src="#.png" width='200'><br>
+    <button id ='hide'> Hide the image</button>
+    <button id ='hide'> Show the image</button>
+    <h3 id ='text'>Mouse Over</h3>
+    <h2>JS regular expressions</h2>
+            <h3>Amrita Vishwa Vidyapeetham, Amrita School Of Engineering, Chennai Campus</h3>
+            <p>To find the position of 'Chennai' <button onclick="finder()">Click Me </button> </p>
+            <p id="demo"></p>
+            <h3 id="hello">Amrita School of Engineering, Chennai is about 40 KMs away from Chennai, 90 KMs away from Tirupati</h3>
+            <p>To replace 'Amrita' with 'The' <button onclick="rep()">Click Me</button> </p>
+</div>
+    <script type = 'text/JavaScript'>
+        let image=document.getElementById('img')
+        let hide=document.getElementById('hide')
+        let hide=document.getElementById('show')
+        let hide=document.getElementById('text')
+        hide.onclick=function(){
+            image.style.dispaly='none'
+        }
+        show.ondblclick=function(){
+            image.style.display='block'
+        }
+        text.onmouseover=function(){
+            text.innerHTML='HELLO!'
+        }
+        text.onmouseout=function(){
+            text.innerHTML='Mouse Over'
+        }
+        function finder() {
+            let text = "Amrita Vishwa Vidyapeetham, Amrita School Of Engineering, Chennai Campus";
+            let n = text.search(/Chennai/i);
+            document.getElementById("demo").innerHTML = "Chennai found at : " + n;
+        }
+
+        function rep() {
+            let text = document.getElementById("hello").innerHTML;
+            document.getElementById("hello").innerHTML =
+                text.replace(/Amrita/i, "The");
+        }
+    </script>
+</body>
+</html>
